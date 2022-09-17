@@ -33,7 +33,7 @@ const register = asyncHandler(async (req, res) => {
     cookie.serialize("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV !== "development",
-      sameSite: "strict",
+      sameSite: "none",
       path: "/",
     })
   );
@@ -64,7 +64,7 @@ const login = asyncHandler(async (req, res) => {
     cookie.serialize("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV !== "development",
-      sameSite: "strict",
+      sameSite: "none",
       path: "/",
     })
   );
@@ -169,7 +169,7 @@ const deleteAccount = asyncHandler(async (req, res) => {
       httpOnly: true,
       secure: process.env.NODE_ENV !== "development",
       expires: new Date(0),
-      sameSite: "strict",
+      sameSite: "none",
       path: "/",
     })
   );
@@ -234,7 +234,7 @@ const logout = asyncHandler(async (req, res) => {
       httpOnly: true,
       secure: process.env.NODE_ENV !== "development",
       expires: new Date(0),
-      sameSite: "strict",
+      sameSite: "none",
       path: "/",
     })
   );
