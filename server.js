@@ -16,7 +16,11 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://fruit-blog-client.onrender.com",
+    origin: [
+      "https://fruit-blog-client.onrender.com",
+      "https://fruit-blog-client.vercel.app",
+      "http://localhost:8080",
+    ],
     credentials: true,
   })
 );
