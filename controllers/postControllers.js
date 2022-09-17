@@ -91,7 +91,7 @@ const fetchOtherPosts = asyncHandler(async (req, res) => {
 // ROUTE - GET - /api/posts/latest
 // PUBLIC
 const fetchLatest = asyncHandler(async (req, res) => {
-  const latestPost = await Post.findOne()
+  const latestPost = await Post.findOne({ status: "published" })
     .sort({ createdAt: "desc" })
     .populate("likes", "author");
 
